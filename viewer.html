@@ -353,6 +353,74 @@ function logo(t, sz) {
     </svg>
   `;
 }
+  const GROUPS = {
+  A: ['BRC1', 'Midgard', 'Dosson', 'Cesena'],
+  B: ['BRC2', 'Cus Ferrara', 'Cus Genova', 'Pontedera']
+};
+
+const PTS = {
+  try: 5,
+  conv: 2,
+  pen: 3,
+  drop: 3
+};
+
+const TC = {
+  BRC1: { c: '#f5b731' },
+  BRC2: { c: '#c084fc' },
+  Midgard: { c: '#f5b731' },
+  Dosson: { c: '#00cfff' },
+  Cesena: { c: '#1ed760' },
+  'Cus Ferrara': { c: '#fb923c' },
+  'Cus Genova': { c: '#22d3ee' },
+  Pontedera: { c: '#f472b6' }
+};
+
+function tc(t) {
+  return TC[t] || { c: '#888' };
+}
+
+function abbr(t) {
+  if (!t || t === '—') return '—';
+  const w = t.split(' ');
+  return w.length > 1
+    ? w.map(x => x[0]).join('').toUpperCase().slice(0, 3)
+    : t.slice(0, 3).toUpperCase();
+}
+
+function fmt(n) {
+  return String(n || 0).padStart(2, '0') + "'";
+}
+
+function ecls(t) {
+  return {
+    try: 'et',
+    conv: 'ec',
+    pen: 'ep',
+    drop: 'ed',
+    yellow: 'ey',
+    red: 'er'
+  }[t] || '';
+}
+
+function elbl(t) {
+  return {
+    try: 'META',
+    conv: 'TRAS',
+    pen: 'PEN',
+    drop: 'DROP',
+    yellow: '🟨',
+    red: '🟥'
+  }[t] || t;
+}
+
+function gm(id) {
+  return MS.find(m => m.id === id);
+}
+
+let MS = [];
+let selId = null;
+let tab = 'live';
 
 /* ═══════════ CLOCK ═══════════ */
 setInterval(()=>{const el=document.getElementById('clk');if(el)el.textContent=new Date().toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit',second:'2-digit'});},1000);
