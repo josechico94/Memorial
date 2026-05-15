@@ -631,8 +631,9 @@ function autoUpdateFinals(){
   const s3=MS.find(m=>m.id===15),s4=MS.find(m=>m.id===16);
   if(s1&&s1.st==='upcoming'){s1.h=name(gA,0,'A');s1.a=name(gB,1,'B');}  // 1°A vs 2°B
   if(s2&&s2.st==='upcoming'){s2.h=name(gB,0,'B');s2.a=name(gA,1,'A');}  // 1°B vs 2°A
-  if(s3&&s3.st==='upcoming'){s3.h=name(gA,2,'A');s3.a=name(gB,2,'B');}  // 3°A vs 3°B
-  if(s4&&s4.st==='upcoming'){s4.h=name(gA,3,'A');s4.a=name(gB,3,'B');}  // 4°A vs 4°B
+  if(s3&&s3.st==='upcoming'){s3.h=name(gA,2,'A');s3.a=name(gB,3,'B');}  // 3°A vs 4°B
+  if(s4&&s4.st==='upcoming'){s4.h=name(gA,2,'B');s4.a=name(gB,3,'A');}  // 3°B vs 4°A
+ 
   // Finali
   const f18=MS.find(m=>m.id===18);
   if(f18&&f18.st==='upcoming'){f18.h=win(s1)||(s1?`Vinc. ${s1.h}`:'Vinc. Sem1');f18.a=win(s2)||(s2?`Vinc. ${s2.h}`:'Vinc. Sem2');}
