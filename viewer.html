@@ -482,8 +482,8 @@ function applyFinalsBracket(){
   const s1=gm(13),s2=gm(14),s3=gm(15),s4=gm(16);
   if(s1&&s1.st==='upcoming'){s1.h=name(gA,0,'A');s1.a=name(gB,1,'B');}
   if(s2&&s2.st==='upcoming'){s2.h=name(gB,0,'B');s2.a=name(gA,1,'A');}
-  if(s3&&s3.st==='upcoming'){s3.h=name(gA,2,'A');s3.a=name(gB,2,'B');}
-  if(s4&&s4.st==='upcoming'){s4.h=name(gA,3,'A');s4.a=name(gB,3,'B');}
+  if(s3&&s3.st==='upcoming'){s3.h=name(gA,2,'A');s3.a=name(gB,3,'B');}
+  if(s4&&s4.st==='upcoming'){s4.h=name(gA,2,'B');s4.a=name(gB,3,'A');}
   const f18=gm(18);if(f18&&f18.st==='upcoming'){f18.h=win(s1)||(s1?`Vinc. ${s1.h}`:'Vinc. Sem1');f18.a=win(s2)||(s2?`Vinc. ${s2.h}`:'Vinc. Sem2');}
   const f17=gm(17);if(f17&&f17.st==='upcoming'){f17.h=los(s1)||(s1?`Perd. ${s1.h}`:'Perd. Sem1');f17.a=los(s2)||(s2?`Perd. ${s2.h}`:'Perd. Sem2');}
   const f19=gm(19);if(f19&&f19.st==='upcoming'){f19.h=win(s3)||(s3?`Vinc. ${s3.h}`:'Vinc. Sem3');f19.a=win(s4)||(s4?`Vinc. ${s4.h}`:'Vinc. Sem4');}
